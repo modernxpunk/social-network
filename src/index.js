@@ -1,17 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, {useState} from 'react'
+import ReactDOM from 'react-dom'
+import {BrowserRouter} from 'react-router-dom'
+import {AuthContext} from './components/context/Context.js'
+import AppRouter from './components/router/AppRouter.js'
+import './components/styles/reset.css'
+import main from './components/styles/main.module.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function App() {
+	const [isAuth, setIsAuth] = useState(false)
+	const [username, setUsername] = useState('')
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+	return (
+		<React.StrictMode>
+			<AuthContext.Provider value={{isAuth, setIsAuth, username, setUsername}}>
+				<BrowserRouter>
+					<div className={main["wrapper"]}>
+						<div className={main["telegram"]}>
+							<AppRouter />
+						</div>
+					</div>
+				</BrowserRouter>
+			</AuthContext.Provider>
+		</React.StrictMode>
+	)
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))

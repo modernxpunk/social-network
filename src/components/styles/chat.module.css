@@ -1,0 +1,139 @@
+.navigation {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.backToChats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconBack img {
+    filter: invert(1);
+}
+
+.isOnline {
+    color: #787878;
+}
+
+.navigation .avatar img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.avatar {
+    margin: 5px;
+}
+
+.name-online {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chats {
+    height: 80%;
+    background-color: black;
+    color: white;
+    overflow: auto;
+}
+
+.chats {
+    background: url('../../assets/background.jpg');
+    background-size: cover;
+}
+
+.chats::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chats::-webkit-scrollbar-track {
+    background-color: #1C1C1E;
+}
+
+.chats::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px grey;
+}
+
+.chats p {
+    display: inline-block;
+}
+
+.chat {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.sender p {
+    background-color: #313131;
+}
+
+.receiver p {
+    text-align: left;
+    background-color: #262628;
+}
+
+.sender p, .receiver p {
+    word-break: break-all;
+    padding: 10px;
+    width: 80%;
+    border-radius: 30px;
+}
+
+.chat span {
+    font-size: .5em;
+    color: #8e8e93;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+}
+
+
+.receiver {
+    text-align: right;
+}
+
+.footer {
+    border-top: 1px solid #3d3d3f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer input {
+    border: 1px solid #3a3a3c;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    background-color: #060606;
+    color: #757578;
+}
+
+.footer textarea:focus, .footer input:focus{
+    outline: none;
+}
+.footer input[type="text"] {
+    border-radius: 30px;
+    padding: 7px;
+}
+
+.footer-wrap {
+    margin-top: 10px;
+    display: flex;
+}
+
+.footer-wrap img {
+    filter: invert(1);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
