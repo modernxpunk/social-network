@@ -57,16 +57,16 @@ class authController {
 
 			const newMessage = {date: Date.now(), message}
 
-			if (from.messages.get(to.username)) {
-				from.messages.set(to.username, [...from.messages.get(to.username), {...newMessage, who: from.username}])
+			if (from.messages.get(receiver)) {
+				from.messages.set(receiver, [...from.messages.get(receiver), {...newMessage, who: sender}])
 			} else {
-				from.messages.set(to.username, [{...newMessage, who: from.username}])
+				from.messages.set(receiver, [{...newMessage, who: sender}])
 			}
 
 			if (to.messages.get(from.username)) {
-				to.messages.set(from.username, [...to.messages.get(from.username), {...newMessage, who: from.username}])				
+				to.messages.set(sender, [...to.messages.get(sender), {...newMessage, who: sender}])
 			} else {
-				to.messages.set(from.username, [{...newMessage, who: from.username}])
+				to.messages.set(sender, [{...newMessage, who: sender}])
 			}
 			
 			await from.save()

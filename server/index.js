@@ -38,12 +38,11 @@ const main = async () => {
                 }
                 else if (msg.method === "message") {
                     const {message} = msg
-                    console.log(sender, receiver, message)
                     wss.clients.forEach(client => {
-                        if (sender === client.sender && receiver === client.receiver) {
-                            client.send(JSON.stringify({message, updateDatabase: true}))
-                        } else if (receiver === client.sender && sender === client.receiver) {
-                            client.send(JSON.stringify(({message, updateDatabase: false})))
+                        if (ws.sender === client.sender && ws.receiver === client.receiver) {
+                            client.send(JSON.stringify({message}))
+                        } else if (ws.sender === client.receiver && ws.receiver === client.sender) {
+                            client.send(JSON.stringify({message}))
                         }
                     })
                 }
